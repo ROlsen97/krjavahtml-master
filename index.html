@@ -15,11 +15,14 @@
         <br/>
         <input v-model="artistToGetBy" placeholder="artist" type="text"/>
         <button v-on:click="getByArtist(artistToGetBy)" class="btn btn-primary">Get by artist</button>
+        <input v-model="titleToGetBy" placeholder="title" type="text"/>
+        <button v-on:click="getByTitle(titleToGetBy)" class="btn btn-primary">Get by title</button>
         <ul id ="Recordslist" v.if="Records.length">
             <li v-for="Record in Records">
                 {{Record.title}} {{Record.artist}} {{Record.duration}} {{Record.publicationYear}}
             </li>
         </ul>
+        <br/>
         
 
     </div>

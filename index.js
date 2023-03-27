@@ -5,16 +5,20 @@ Vue.createApp({
         return{
             Records: [],
             artistToGetBy: "",
+            titleToGetBy: "",
         }
     },
     methods: {
         getAllRecords(){
-            this.helperGetAndShow(basesUrl)
+            this.helperGetAndShow(baseUrl)
         },
         getByArtist(artist){
             const url = baseUrl +"?artist=" + artist
             this.helperGetAndShow(url)
-            
+        },
+        getByTitle(title){
+            const url = baseUrl +"?title=" + title
+            this.helperGetAndShow(url)
         },
         async helperGetAndShow(url){
             try {
