@@ -13,9 +13,11 @@
     <div id="app">
         <button id="getAllButton" v-on:click="getAllRecords" class="btn btn-primary">Get all records</button>
         <br/>
+        <input v-model="artistToGetBy" placeholder="artist" type="text"/>
+        <button v-on:click="getByArtist(artistToGetBy)" class="btn btn-primary">Get by artist</button>
         <ul id ="Recordslist" v.if="Records.length">
-            <li v-for="Records in Record">
-                {{Records.title}} {{Records.artist}} {{Records.duration}} {{Records.publicationYear}}
+            <li v-for="Record in Records">
+                {{Record.title}} {{Record.artist}} {{Record.duration}} {{Record.publicationYear}}
             </li>
         </ul>
         
