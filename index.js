@@ -3,19 +3,22 @@ const baseUrl = "https://restogjavadr20230327122701.azurewebsites.net/api/Record
 Vue.createApp({
     data(){
         return{
-            Records: []
+            Records: [],
+            artistToGetBy: "",
         }
     },
     methods: {
         getAllRecords(){
             this.helperGetAndShow(baseUrl)
         },
-        getByArtist(){
+        getByArtist(artist){
+            const url = baseUrl +"?artist=" + artist
+            this.helperGetAndShow(url)
             
         },
-        async helperGetAndShow(baseUrl){
+        async helperGetAndShow(url){
             try {
-                const response = await axios.get(baseUrl)
+                const response = await axios.get(url)
                 this.Records = await response.data
             } catch (ex) {
                 alert(ex.message)
