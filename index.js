@@ -8,14 +8,15 @@ Vue.createApp({
     },
     methods: {
         getAllRecords(){
-            this.helperGetAndShow(baseUrl)
+            this.helperGetAndShow(basesUrl)
         },
         getByArtist(){
-            
+            const url = baseUrl + "?vendor=" + vendor
+            this.helperGetAndShow(url)
         },
-        async helperGetAndShow(baseUrl){
+        async helperGetAndShow(url){
             try {
-                const response = await axios.get(baseUrl)
+                const response = await axios.get(url)
                 this.Records = await response.data
             } catch (ex) {
                 alert(ex.message)

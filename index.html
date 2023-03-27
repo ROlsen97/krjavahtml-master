@@ -14,7 +14,7 @@
         <button id="getAllButton" v-on:click="getAllRecords" class="btn btn-primary">Get all records</button>
         <br/>
         <ul id ="Recordslist" v.if="Records.length">
-            <li v-for="Record in record">
+            <li v-for="Records in Record">
                 {{Records.title}} {{Records.artist}} {{Records.duration}} {{Records.publicationYear}}
             </li>
         </ul>
